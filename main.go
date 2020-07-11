@@ -10,25 +10,27 @@ import (
 )
 
 type blogPost struct {
-	title   string `json:"title"`
-	content string `json:"content"`
+	Id      int64  `json:"Id"`
+	Title   string `json:"Title"`
+	Content string `json:"Content"`
 }
 
 type blogPosts []blogPost
 
 var myPosts = blogPosts{
 	{
-		title:   "My Life",
-		content: "My Life is Good",
+		Id:      1,
+		Title:   "My Life",
+		Content: "My Life is Good",
 	},
 	{
-		title:   "Your Life",
-		content: "Your Life is Good Too",
+		Id:      2,
+		Title:   "Your Life",
+		Content: "Your Life is Good Too",
 	},
 }
 
 func main() {
-	fmt.Println(myPosts)
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", homeHandler)
 	router.HandleFunc("/posts", getPosts)
@@ -41,6 +43,5 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func getPosts(w http.ResponseWriter, r *http.Request) {
 	//res, _ := json.Marshal(myPosts)
-	fmt.Println(myPosts)
 	json.NewEncoder(w).Encode(myPosts)
 }
