@@ -10,7 +10,7 @@ import (
 )
 
 type blogPost struct {
-	Id      int64  `json:"Id"`
+	ID      int64  `json:"ID"`
 	Title   string `json:"Title"`
 	Content string `json:"Content"`
 }
@@ -19,12 +19,12 @@ type blogPosts []blogPost
 
 var myPosts = blogPosts{
 	{
-		Id:      1,
+		ID:      1,
 		Title:   "My Life",
 		Content: "My Life is Good",
 	},
 	{
-		Id:      2,
+		ID:      2,
 		Title:   "Your Life",
 		Content: "Your Life is Good Too",
 	},
