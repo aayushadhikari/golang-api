@@ -30,6 +30,11 @@ var myPosts = blogPosts{
 		Title:   "Your Life",
 		Content: "Your Life is Good Too",
 	},
+	{
+		ID:      3,
+		Title:   "Their Life",
+		Content: "Their Life is Good Too",
+	},
 }
 
 func main() {
